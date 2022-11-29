@@ -1,0 +1,171 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-2">
+      <h2>Faj</h2>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="species"
+          id="dog"
+          value="kutya"
+          (change)="ifSpeciesSelected($event)"
+        />
+        <label class="form-check-label" for="dog"> kutya </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="species"
+          id="cat"
+          value="macska"
+          (change)="ifSpeciesSelected($event)"
+        />
+        <label class="form-check-label" for="cat"> macska </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="species"
+          id="all"
+          value="összes"
+          (change)="ifSpeciesSelected($event)"
+        />
+        <label class="form-check-label" for="all"> összes </label>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>Ivar</h2>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="male"
+          value="hím"
+          (change)="ifGenderSelected($event)"
+        />
+        <label class="form-check-label" for="male"> hím </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="female"
+          value="nőstény"
+          (change)="ifGenderSelected($event)"
+        />
+        <label class="form-check-label" for="female"> nőstény </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="all"
+          value="összes"
+          (change)="ifGenderSelected($event)"
+        />
+        <label class="form-check-label" for="all"> összes </label>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>Méret</h2>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="size"
+          id="small"
+          value="kicsi"
+          (change)="ifSizeSelected($event)"
+        />
+        <label class="form-check-label" for="small"> kicsi </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="size"
+          id="middle"
+          value="közepes"
+          (change)="ifSizeSelected($event)"
+        />
+        <label class="form-check-label" for="middle"> közepes </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="size"
+          id="big"
+          value="nagy"
+          (change)="ifSizeSelected($event)"
+        />
+        <label class="form-check-label" for="big"> nagy </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="size"
+          id="big"
+          value="összes"
+          (change)="ifSizeSelected($event)"
+        />
+        <label class="form-check-label" for="big"> összes </label>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>Kor</h2>
+      <div class="form-check">
+        <input
+          name="age"
+          class="form-check-input"
+          type="radio"
+          value="young"
+          id="young"
+          (change)="ifAgeSelected($event)"
+        />
+        <label class="form-check-label" for="young"> 0-3 éves </label>
+      </div>
+      <div class="form-check">
+        <input
+          name="age"
+          class="form-check-input"
+          type="radio"
+          value="mid"
+          id="mid"
+          (change)="ifAgeSelected($event)"
+        />
+        <label class="form-check-label" for="mid"> 3-5 éves </label>
+      </div>
+      <div class="form-check">
+        <input
+          name="age"
+          class="form-check-input"
+          type="radio"
+          value="old"
+          id="old"
+          (change)="ifAgeSelected($event)"
+        />
+        <label class="old" for="defaultCheck1"> 5 évestől idősebb </label>
+      </div>
+    </div>
+    <div class="col-4">
+      <h2>Keresés névre</h2>
+      <input
+        name="filterKey"
+        [(ngModel)]="phrase"
+        (keyup)="onNameSearch()"
+        class="form-control"
+        type="text"
+        aria-label="search word"
+        aria-describedby="phrase"
+      />
+    </div>
+  </div>
+</div>

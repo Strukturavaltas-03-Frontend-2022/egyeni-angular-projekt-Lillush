@@ -1,0 +1,40 @@
+<div class="container">
+  <H1>Örökbefogadható állatok</H1>
+  <span>Új Állatka</span>
+  <button [routerLink]="['/animal/0']" class="btn btn-success">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>
+
+<app-filter
+  (keyPhrase)="onSearchAnimalName($event)"
+  (speciesChange)="onSpeciesChange($event)"
+  (ageChange)="onAgeChange($event)"
+  (genderChange)="onGenderChange($event)"
+  (sizeChange)="onSizeChange($event)"
+></app-filter>
+
+<div class="container">
+  <div class="row">
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center"
+      *ngFor="
+        let animal of animalList
+          | async
+          | filter: phrase:'name'
+          | species: species
+          | age: age
+          | gender: gender
+          | size: size
+      "
+    >
+      <app-card [animal]="animal"></app-card>
+    </div>
+  </div>
+</div>
+<!-- <pagination-controls
+  class="my-pagination"
+  (pageChange)="p = $event"
+  previousLabel="Előző"
+  nextLabel="Következő"
+></pagination-controls> -->

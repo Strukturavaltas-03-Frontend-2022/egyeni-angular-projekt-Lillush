@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form (ngSubmit)="onSaveItem(animal)" #animalEditor="ngForm">
+        <div class="row">
+          <div class="form-group">
+            <label>Név</label>
+            <input
+              name="name"
+              [(ngModel)]="animal.name"
+              type="text"
+              class="form-control"
+              pattern="^[A-Ű][A-Űa-Ű .]{3,24}$"
+              required
+            />
+            <div
+              *ngIf="animalEditor.controls['name']?.invalid"
+              class="error-message"
+            >
+              A név legalább 4 karakter hosszú kell legyen!
+            </div>
+          </div>
+          <div>
+            <label for="species">Faj</label>
+            <select
+              name="species"
+              [(ngModel)]="animal.species"
+              class="form-control"
+              id="species"
+              required
+            >
+              <option>kutya</option>
+              <option>macska</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Fajta</label>
+            <input
+              name="breed"
+              [(ngModel)]="animal.breed"
+              type="text"
+              class="form-control"
+              pattern="^[A-Ű][A-Űa-Ű .]{3,24}$"
+              required
+            />
+            <div
+              *ngIf="animalEditor.controls['breed']?.invalid"
+              class="error-message"
+            >
+              A név legalább 4 karakter hosszú kell legyen!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nem</label>
+            <select
+              name="gender"
+              [(ngModel)]="animal.gender"
+              class="form-control"
+              required
+            >
+              <option>hím</option>
+              <option>nőstény</option>
+            </select>
+            <div
+              *ngIf="animalEditor.controls['gender']?.invalid"
+              class="error-message"
+            >
+              Válassz nemet!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Méret</label>
+            <select
+              name="size"
+              [(ngModel)]="animal.size"
+              class="form-control"
+              required
+            >
+              <option>kicsi</option>
+              <option>közepes</option>
+              <option>nagy</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Kor (év)</label>
+            <input
+              name="age"
+              [(ngModel)]="animal.age"
+              type="text"
+              class="form-control"
+              id="age"
+            />
+          </div>
+          <div class="form-group">
+            <label for="isNeutered">Státusz</label>
+            <select
+              name="isNeutered"
+              [(ngModel)]="animal.isNeutered"
+              class="form-control"
+              id="isNeutered"
+              required
+            >
+              <option>ivartalanitva</option>
+              <option>nincs ivartalanitva</option>
+            </select>
+          </div>
+          <div>
+            <label for="image">Kép (link)</label>
+            <input
+              name="image"
+              [(ngModel)]="animal.image"
+              type="text"
+              class="form-control"
+              id="image"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button
+              [disabled]="animalEditor.invalid"
+              type="submit"
+              class="btn btn-primary btn-lg"
+            >
+              <i class="fa fa-save"></i> Mentés
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

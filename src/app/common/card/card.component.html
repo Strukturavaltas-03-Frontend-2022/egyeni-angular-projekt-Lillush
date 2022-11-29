@@ -1,0 +1,26 @@
+<div class="card" style="width: 18rem">
+  <img [src]="animal.image" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ animal.name }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ animal.species }}</li>
+    <li class="list-group-item">{{ animal.breed }}</li>
+    <li class="list-group-item">{{ animal.gender }}</li>
+    <li class="list-group-item">{{ animal.size }}</li>
+    <li class="list-group-item">{{ animal.age }}</li>
+    <li class="list-group-item">
+      {{ animal.isNeutered === true ? "ivartalanitva" : "nincs ivartalanitva" }}
+    </li>
+  </ul>
+  <div class="card-body">
+    <div class="btn-group">
+      <button class="btn btn-info" [routerLink]="['/animal/', animal.uniqueId]">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button (click)="onDeleteAnimal(animal)" class="btn btn-danger">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
