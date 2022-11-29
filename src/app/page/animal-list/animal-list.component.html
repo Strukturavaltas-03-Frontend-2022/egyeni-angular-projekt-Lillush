@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container py-5">
   <H1>Örökbefogadható állatok</H1>
-  <span>Új Állatka</span>
-  <button [routerLink]="['/animal/0']" class="btn btn-success">
-    <i class="fa fa-plus" aria-hidden="true"></i>
+
+  <button [routerLink]="['/animal/0']" class="btn btn-success addbutton">
+    Új Állatka
   </button>
 </div>
 
@@ -26,15 +26,18 @@
           | age: age
           | gender: gender
           | size: size
+          | paginate: { itemsPerPage: 20, currentPage: p }
       "
     >
       <app-card [animal]="animal"></app-card>
     </div>
   </div>
 </div>
-<!-- <pagination-controls
-  class="my-pagination"
-  (pageChange)="p = $event"
-  previousLabel="Előző"
-  nextLabel="Következő"
-></pagination-controls> -->
+<div class="pagination">
+  <pagination-controls
+    class="my-pagination"
+    (pageChange)="p = $event"
+    previousLabel="Előző"
+    nextLabel="Következő"
+  ></pagination-controls>
+</div>

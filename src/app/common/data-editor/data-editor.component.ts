@@ -14,6 +14,11 @@ import { environment } from 'src/environments/environment';
 export class DataEditorComponent implements OnInit {
   animal: Animal = new Animal();
 
+  animalSpecies: string[] = ['kutya', 'macska'];
+  animalIsNeutered: boolean[] = [true, false];
+  animalGender: string[] = ['hím', 'nőstény'];
+  animalSize: string[] = ['kicsi', 'közepes', 'nagy'];
+
   placeholderImg = environment.placeholderImg;
   constructor(
     private editRoute: ActivatedRoute,
@@ -46,7 +51,5 @@ export class DataEditorComponent implements OnInit {
         .updateAnimal(animal)
         .subscribe((animal) => this.router.navigate(['/animal-list']));
     }
-
-    // if else id vagy nem id
   }
 }

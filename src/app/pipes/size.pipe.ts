@@ -5,6 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SizePipe<T extends { [x: string]: any }> implements PipeTransform {
   transform(list: T[], size: string = ''): T[] {
+    if (!Array.isArray(list) || !size) {
+      return list;
+    }
+
     if (size === 'összes') {
       return list;
     } else if (size === 'kicsi') {

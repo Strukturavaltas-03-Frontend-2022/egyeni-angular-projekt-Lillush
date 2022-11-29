@@ -12,6 +12,7 @@ export class AnimalListComponent implements OnInit {
   animalList: Observable<Animal[]> = this.animalService.fetchAnimalData();
 
   p: number = 1;
+  collection: any[] = [];
 
   phrase: string = '';
   species: string = '';

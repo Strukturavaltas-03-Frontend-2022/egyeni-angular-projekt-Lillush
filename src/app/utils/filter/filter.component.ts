@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -15,7 +16,7 @@ export class FilterComponent implements OnInit {
   @Output() genderChange: EventEmitter<string> = new EventEmitter();
   @Output() sizeChange: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -41,5 +42,11 @@ export class FilterComponent implements OnInit {
   ifSizeSelected(event: Event) {
     const target = event.target as HTMLTextAreaElement;
     this.sizeChange.emit(target.value);
+  }
+
+  onDeleteFilters() {
+    this.router.navigate(['/']).then(() => {
+      this.router.navigate(['/animal-list']);
+    });
   }
 }

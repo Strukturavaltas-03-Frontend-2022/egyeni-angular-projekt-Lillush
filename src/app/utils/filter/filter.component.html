@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div class="container mb-5 filter-container">
   <div class="row">
     <div class="col-2">
       <h2>Faj</h2>
@@ -155,7 +155,7 @@
         <label class="old" for="defaultCheck1"> 5 évestől idősebb </label>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <h2>Keresés névre</h2>
       <input
         name="filterKey"
@@ -166,6 +166,11 @@
         aria-label="search word"
         aria-describedby="phrase"
       />
+    </div>
+    <div class="col-1 buttoncontainer">
+      <button (click)="onDeleteFilters()" class="btn btn-light delbutton">
+        Szűrők törlése
+      </button>
     </div>
   </div>
 </div>
